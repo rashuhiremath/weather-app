@@ -5,6 +5,7 @@ import { IApp } from "./interfaces/IApp";
 import WeatherDisplay from "./WeatherDisplay";
 
 
+
 const SearchCity = () => {
    const[city ,setCity]=useState("")
   const [weather, setWeather] = useState<IApp | undefined>(undefined);
@@ -13,7 +14,7 @@ const SearchCity = () => {
   const theCityWeather = async (city:string) => {
     try {
       let response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a49fd9a072b4bf6b6defd3f58f3e6d60`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&&units=metric&appid=a49fd9a072b4bf6b6defd3f58f3e6d60`
       );
       if (response.ok) {
         let data: IApp = await response.json();
